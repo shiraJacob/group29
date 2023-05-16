@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Second Servings- Food You Shared</title>
+  <link rel="stylesheet" href="../Static/SecondServings_CSS.css">
+  <link rel="icon" type="image/x-icon" href="../Static/images/logo.png">
+</head>
+<body>
+<div id="menu"></div>
+  <script>
+    fetch('MenuBar_User.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('menu').innerHTML = html;
+      });
+  </script>
+<img src="../Static/images/logo.png" alt="logo" class="icon">
+<h2>Second Servings</h2>
+<h3>Food You Shared</h3>
+
+<div class="container_grid">
+
+
+  <input type="text" id="username" class="data" readonly>
+  <p></p>
+  <div class="container_scrollbar">
+    <div class="container2sides_watch">
+      <div class="left_viewPost">
+        <img id="image" src="../Static/images/food1.jpg" alt="your image" width="150" height="140">
+      </div>
+      <div class="right_watch">
+        <button id="button_viewPost"><input id="title1" readonly></button>
+        <div class="row_profileData">
+          <div class="input-group">
+            <img src="../Static/images/date.png" alt="logo" width="40" height="40">
+            <input type="text" id="expiration_date1" class="data" readonly>
+          </div>
+        </div>
+        <div class="row_profileData">
+          <div class="input-group">
+            <img src="../Static/images/group.png" alt="logo" width="40" height="40">
+            <input type="number" id="enjoyedYourFood_number1" class="profile_data" readonly>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container2sides_watch">
+      <div class="left_viewPost">
+        <img id="image" src="../Static/images/food2.jpg" alt="your image" width="150" height="140">
+      </div>
+      <div class="right_watch">
+         <button id="button_viewPost2"><input id="title2" readonly></button>
+        <div class="row_profileData">
+          <div class="input-group">
+            <img src="../Static/images/date.png" alt="logo" width="40" height="40">
+            <input type="text" id="expiration_date2" class="data" readonly>
+          </div>
+        </div>
+        <div class="row_profileData3">
+          <div class="input-group">
+            <img src="../Static/images/group.png" alt="logo" width="40" height="40">
+            <input type="number" id="enjoyedYourFood_number2" class="profile_data" readonly>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container2sides_watch">
+      <div class="left_viewPost">
+        <img id="image" src="../Static/images/food3.jpg" alt="your image" width="150" height="140">
+      </div>
+      <div class="right_watch">
+         <button id="button_viewPost3"><input id="title3" readonly></button>
+        <div class="row_profileData">
+          <div class="input-group">
+            <img src="../Static/images/date.png" alt="logo" width="40" height="40">
+            <input type="text" id="expiration_date3" class="data" readonly>
+          </div>
+        </div>
+        <div class="row_profileData">
+          <div class="input-group">
+            <img src="../Static/images/group.png" alt="logo" width="40" height="40">
+            <input type="number" id="enjoyedYourFood_number3" class="profile_data" readonly>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <p></p>
+
+</div>
+<footer>
+  Second Servings | Tel: +972-524366539 | Email: secondServings@gmail.com
+</footer>
+<button id="button5">Back</button>
+<script src="../Static/JS_FoodYouShared.js" type="module"></script>
+</body>
+</html>

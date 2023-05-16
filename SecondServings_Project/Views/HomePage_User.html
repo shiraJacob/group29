@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="../Static/SecondServings_CSS.css">
+  <link rel="icon" type="image/x-icon" href="../Static/images/logo.png">
+  <meta charset="UTF-8">
+  <title>Second Servings</title>
+
+</head>
+<body>
+
+<div id="menu"></div>
+<script>
+  fetch('MenuBar_User.html')
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById('menu').innerHTML = html;
+    });
+</script>
+
+<button type="button" id="button_login1">
+  <img src="../Static/images/userIcon.png" alt="logo" width="26" height="26">
+  My Profile
+</button>
+
+<p></p>
+
+
+<h2>Second Servings</h2>
+<div class="container_NoBlur">
+  <input type="text" id="greeting"  readonly>
+</div>
+<div class="container_aboutUs">
+  <p id="p_aboutUs">
+    Welcome to Second Servings- platform for sharing food leftovers! <br> Our goal is to reduce waste while helping those in need access to
+    good quality food. Whether you're an individual or a restaurant owner, join us in creating a sustainable future by
+    contributing to the community.</p>
+</div>
+<div class="row_homePage">
+
+    <button id="button_share1">I want to share</button>
+
+  <div class="image-container">
+    <img src="../Static/images/logo.png" alt="logo" width="400" >
+  </div>
+
+  <button id="button_pickup1">I want to pick-up</button>
+
+</div>
+<p></p>
+<p></p>
+<script src="../Static/JS_HomePage_User.js"></script>
+</body>
+<footer >
+  Second Servings | Tel: +972-524366539 | Email: secondServings@gmail.com
+</footer>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Second Servings- Your profile</title>
+  <link rel="stylesheet" href="../Static/SecondServings_CSS.css">
+  <link rel="icon" type="image/x-icon" href="../Static/images/logo.png">
+
+</head>
+<body>
+<div id="menu"></div>
+<script>
+  fetch('MenuBar_User.html')
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById('menu').innerHTML = html;
+    });
+</script>
+<img src="../Static/images/logo.png" alt="logo" class="icon">
+<h2>Second Servings</h2>
+<h3>Welcome</h3>
+<div class="container_profile">
+
+  <input type="text" id="username" class="profile_data" readonly>
+  <p></p>
+
+  <div class="row_profile">
+    <div class="input-group">
+      <img src="../Static/images/Send.png" alt="logo" width="80" height="50">
+      <input type="number" id="foodSahring_number" class="profile_data" readonly>
+    </div>
+    <div class="input-group">
+      <img src="../Static/images/food.png" alt="logo" width="50" height="50">
+      <input type="number" id="pickups_number" class="profile_data" readonly>
+    </div>
+  </div>
+
+  <div class="row_profile">
+    <label id="profile_foodSharings">Food Sharing</label>
+    <lable id="profile_myPickups"> Delicious pick-ups</lable>
+  </div>
+
+  <div class="row_profile">
+    <button id="button_viewSharing">View my sharings</button>
+    <button id="button_viewPickups">View my pick-ups</button>
+  </div>
+
+  <p></p>
+  <div class="row_profileData">
+    <div class="input-group">
+      <img src="../Static/images/group.png" alt="logo" width="50" height="50">
+      <input type="number" id="enjoyedYourFood_number" class="profile_data" readonly>
+    </div>
+  </div>
+
+  <div class="row">
+    <label id="profile_enjoyedYourFood">People enjoyed Your Food</label>
+  </div>
+  <p></p>
+
+  <div class="container2sides_profile">
+
+
+    <div class="row_profileData">
+      <div class="input-group">
+        <img src="../Static/images/location.png" alt="logo" width="50" height="60">
+        <input type="text" id="profile_location" class="profile_data" readonly>
+      </div>
+    </div>
+    <p></p>
+    <div class="left_viewPost">
+      <label id="label_category" for="preferences">Diet preferences:</label>
+      <div id="preferences">
+        <label><input type="checkbox" name="Vegetarian"> Vegetarian</label>
+        <label><input type="checkbox" name="Vegan"> Vegan</label>
+        <label><input type="checkbox" name="Gluten-free"> Gluten-free</label>
+        <label><input type="checkbox" name="Peanut-free"> Peanut-free</label>
+        <label><input type="checkbox" name="Dairy-free"> Dairy-free</label>
+        <label><input type="checkbox" name="Sugar-free"> Sugar-free</label>
+      </div>
+    </div>
+    <div class="right_profile">
+      <button id="button_editProfile">Edit Profile Details</button>
+    </div>
+  </div>
+  <p></p>
+</div>
+
+<button id="button5">Back</button>
+<script src="../Static/JS_YourProfile.js" type="module"></script>
+
+</body>
+<footer id="footer_relative">
+  Second Servings | Tel: +972-524366539 | Email: secondServings@gmail.com
+</footer>
+</html>

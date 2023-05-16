@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="../Static/SecondServings_CSS.css">
+  <link rel="icon" type="image/x-icon" href="../Static/images/logo.png">
+  <meta charset="UTF-8">
+  <title>Second Servings- Search Pickup</title>
+</head>
+<body>
+<div id="menu"></div>
+
+<img src="../Static/images/logo.png" alt="logo" class="icon">
+<h2>Second Servings</h2>
+<h3>Find your pick-up</h3>
+
+<div class="container_grid">
+
+  <div class="row">
+    <label for="city_select">City:</label>
+    <select name="city" id="city_select">
+      <option value="">Pick your city</option>
+      <option value="Arad">Arad</option>
+      <option value="Ashdod">Ashdod</option>
+      <option value="Ashkelon">Ashkelon</option>
+      <option value="Bat Yam">Bat Yam</option>
+      <option value="Beersheba">Beersheba</option>
+      <option value="Bnei Brak">Bnei Brak</option>
+      <option value="Eilat">Eilat</option>
+      <option value="Haifa">Haifa</option>
+      <option value="Herzliya">Herzliya</option>
+      <option value="Holon">Holon</option>
+      <option value="Jerusalem">Jerusalem</option>
+      <option value="Kfar Saba">Kfar Saba</option>
+      <option value="Netanya">Netanya</option>
+      <option value="Petah Tikva">Petah Tikva</option>
+      <option value="Raanana">Raanana</option>
+      <option value="Ramat Gan">Ramat Gan</option>
+      <option value="Rishon LeZion">Rishon LeZion</option>
+      <option value="Tel Aviv">Tel Aviv</option>
+      <option value="Tiberias">Tiberias</option>
+      <option value="Zikhron Ya'akov">Zikhron Ya'akov</option>
+    </select>
+    <input type="text" id="city" class="textbox">
+    <button id="button_location">Use location</button>
+  </div>
+
+
+  <div class="row">
+    <label for="kosher" id="label_Kosher">Kosher:</label>
+    <select name="kosher" id="kosher">
+      <option value="">Pick kosher</option>
+      <option value="kosher-dairy">kosher-dairy</option>
+      <option value="kosher-meat">kosher-meat</option>
+      <option value="not-kosher">not-kosher</option>
+    </select>
+
+    <div class="checkbox_container">
+      <label for="preferences_search" id="label_category">Diet preferences:</label>
+      <div id="preferences_search">
+        <label><input type="checkbox" name="Vegetarian"> Vegetarian</label>
+        <label><input type="checkbox" name="Vegan"> Vegan</label>
+        <label><input type="checkbox" name="Gluten-free"> Gluten-free</label>
+        <br><label><input type="checkbox" name="Peanut-free"> Peanut-free</label>
+        <label><input type="checkbox" name="Dairy-free"> Dairy-free</label>
+        <label><input type="checkbox" name="Sugar-free"> Sugar-free</label>
+      </div>
+    </div>
+
+  </div>
+  <div class="row">
+    <button id="button_clearFilter">Clear Filter</button>
+  </div>
+  <button id="button_filter">Search pickup</button>
+  <div class="container_posts">
+    <div class="row_images">
+      <img src="../Static/images/food1.jpg" alt="image1">
+      <img src="../Static/images/food2.jpg" alt="image2">
+      <img src="../Static/images/food3.jpg" alt="image3">
+    </div>
+    <div class="row_images">
+      <img src="../Static/images/food4.jpg" alt="image4">
+      <img src="../Static/images/food5.jpg" alt="image5">
+      <img src="../Static/images/food6.jpg" alt="image6">
+    </div>
+    <div class="row_images">
+      <img src="../Static/images/food7.jpg" alt="image7">
+      <img src="../Static/images/food8.jpg" alt="image8">
+      <img src="../Static/images/food9.jpg" alt="image9">
+    </div>
+  </div>
+</div>
+<footer>
+  Second Servings | Tel: +972-524366539 | Email: secondServings@gmail.com
+</footer>
+<button id="button5">Back</button>
+<script src="../Static/JS_Search.js"></script>
+</body>
+</html>

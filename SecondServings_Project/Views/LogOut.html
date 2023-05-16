@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="../Static/SecondServings_CSS.css">
+  <link rel="icon" type="image/x-icon" href="../Static/images/logo.png">
+  <meta charset="UTF-8">
+  <title>Second Servings - Log Out</title>
+</head>
+<body>
+<div id="menu"></div>
+<script>
+  fetch('MenuBar_User.html')
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById('menu').innerHTML = html;
+    });
+</script>
+
+<img src="../Static/images/logo.png" alt="logo" class="icon">
+
+<h2>Second</h2>
+<h2>Servings</h2>
+<div class="container_NoBlur">
+
+  <div class="image-container">
+    <img src="../Static/images/logo.png" alt="logo" width="200">
+  </div>
+
+  <div class="row">
+    <label id="lable_pleaseLogin1">Are you sure you want </label>
+  </div>
+  <div class="row">
+    <label id="lable_pleaseLogin2">to log out? </label>
+  </div>
+
+  <div class="row_homePage">
+    <button id="button_signUp2">Yes</button>
+    <button id="button_login2">No</button>
+  </div>
+  <p></p>
+</div>
+
+<script src="../Static/JS_LogOut.js"></script>
+</body>
+<footer >
+  Second Servings | Tel: +972-524366539 | Email: secondServings@gmail.com
+</footer>
+</html>

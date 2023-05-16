@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Second Servings- Post Your Food</title>
+  <link rel="stylesheet" href="../Static/SecondServings_CSS.css">
+  <link rel="icon" type="image/x-icon" href="../Static/images/logo.png">
+</head>
+<body>
+<div id="menu"></div>
+
+<img src="../Static/images/logo.png" alt="logo" class="icon">
+<h2>Second Servings</h2>
+<h3>Post Your Food!</h3>
+
+<div class="container_grid">
+
+
+  <div class="addImage">
+    <span class="file-span" onclick="document.getElementById('picture').click();"></span>
+    <input type="file" id="picture" name="picture" style="display: none;" accept="image/*">
+  </div>
+
+  <p></p>
+  <div class="row">
+    <label for="title" id="label3">Title:</label>
+    <input type="text" id="title" class="textbox">
+  </div>
+
+  <div class="row">
+    <label for="Phone" id="label4">Phone number:</label>
+    <input type="tel" id="Phone" class="textbox" required pattern="^05\d{8}$">
+  </div>
+
+  <div class="row">
+    <label for="city">City:</label>
+    <select name="city" id="city">
+      <option value="">Pick your city</option>
+      <option value="Arad">Arad</option>
+      <option value="Ashdod">Ashdod</option>
+      <option value="Ashkelon">Ashkelon</option>
+      <option value="Bat Yam">Bat Yam</option>
+      <option value="Be'er Sheva">Be'er Sheva</option>
+      <option value="Bnei Brak">Bnei Brak</option>
+      <option value="Eilat">Eilat</option>
+      <option value="Haifa">Haifa</option>
+      <option value="Herzliya">Herzliya</option>
+      <option value="Holon">Holon</option>
+      <option value="Jerusalem">Jerusalem</option>
+      <option value="Kfar Saba">Kfar Saba</option>
+      <option value="Netanya">Netanya</option>
+      <option value="Petah Tikva">Petah Tikva</option>
+      <option value="Raanana">Raanana</option>
+      <option value="Ramat Gan">Ramat Gan</option>
+      <option value="Rishon LeZion">Rishon LeZion</option>
+      <option value="Tel Aviv">Tel Aviv</option>
+      <option value="Tiberias">Tiberias</option>
+      <option value="Zikhron Ya'akov">Zikhron Ya'akov</option>
+    </select>
+  </div>
+
+  <div class="row">
+    <label for="pickup" id="label5">Pickup address:</label>
+    <input type="text" id="pickup" class="textbox">
+  </div>
+
+  <div class="row">
+    <label for="description" id="label_desc">Description:</label>
+    <input type="text" id="description" class="textbox">
+  </div>
+
+  <div class="row">
+    <label for="quantity" id="label6">Quantity:</label>
+    <input type="number" id="quantity" value="1" min="1" class="textbox_short">
+  </div>
+
+  <div class="row">
+    <label for="expiry_date" id="label7">Expiry date:</label>
+    <input type="date" id="expiry_date" name="expiry_date" value="">
+    <script>
+      // get today's date
+      const today = new Date();
+      // format date as yyyy-mm-dd
+      const yyyy = today.getFullYear();
+      const mm = String(today.getMonth() + 1).padStart(2, '0');
+      const dd = String(today.getDate()).padStart(2, '0');
+      const formattedDate = `${yyyy}-${mm}-${dd}`;
+      // set default value of input field to today's date
+      document.getElementById("expiry_date").value = formattedDate;
+    </script>
+  </div>
+
+  <div class="row">
+    <label for="pickup_hours_from" id="label8">Pickup hours:</label>
+    <select id="pickup_hours_from" name="pickup_hours_from">
+      <option value="8">8am</option>
+      <option value="9">9am</option>
+      <option value="10">10am</option>
+      <option value="11">11am</option>
+      <option value="12">12pm</option>
+      <option value="13">1pm</option>
+      <option value="14">2pm</option>
+      <option value="15">3pm</option>
+      <option value="16">4pm</option>
+      <option value="17">5pm</option>
+      <option value="18">6pm</option>
+      <option value="19">7pm</option>
+      <option value="20">8pm</option>
+      <option value="21">9pm</option>
+      <option value="22">10pm</option>
+    </select>
+    <label for="pickup_hours_to" id="label10">to</label>
+    <select id="pickup_hours_to" name="pickup_hours_to">
+      <option value="8">8am</option>
+      <option value="9">9am</option>
+      <option value="10">10am</option>
+      <option value="11">11am</option>
+      <option value="12">12pm</option>
+      <option value="13">1pm</option>
+      <option value="14">2pm</option>
+      <option value="15">3pm</option>
+      <option value="16">4pm</option>
+      <option value="17">5pm</option>
+      <option value="18">6pm</option>
+      <option value="19">7pm</option>
+      <option value="20">8pm</option>
+      <option value="21">9pm</option>
+      <option value="22">10pm</option>
+    </select>
+  </div>
+
+  <div class="row">
+    <label for="ingredients" id="label9">Ingredients and allergies:</label>
+    <input type="text" id="ingredients" class="textbox">
+  </div>
+
+  <div class="row">
+    <label for="checkboxes" id="label_Kosher">Kosher: </label>
+  </div>
+  <div class="row">
+    <div id="checkboxes">
+      <label><input type="checkbox" name="kosher-dairy"> Kosher-dairy</label>
+      <label><input type="checkbox" name="kosher-meat"> Kosher-meat</label>
+      <label><input type="checkbox" name="not-kosher"> Not-kosher</label>
+    </div>
+  </div>
+
+
+  <label for="checkboxes" id="label_category">Select categories: </label>
+  <div id="preferences">
+    <label><input type="checkbox" name="Vegetarian"> Vegetarian</label>
+    <label><input type="checkbox" name="Vegan"> Vegan</label>
+    <label><input type="checkbox" name="Gluten-free"> Gluten-free</label>
+    <label><input type="checkbox" name="Peanut-free"> Peanut-free</label>
+    <label><input type="checkbox" name="Dairy-free"> Dairy-free</label>
+    <label><input type="checkbox" name="Sugar-free"> Sugar-free</label>
+
+  </div>
+  <p></p>
+  <button id="button_share">Share My Food!</button>
+  <p></p>
+</div>
+<footer>
+  Second Servings | Tel: +972-524366539 | Email: secondServings@gmail.com
+</footer>
+<button id="button5">Back</button>
+
+<script src="../Static/JS_PostYourFood.js" type="module"></script>
+
+
+</body>
+</html>

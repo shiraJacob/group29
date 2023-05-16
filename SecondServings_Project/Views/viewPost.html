@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../Static/SecondServings_CSS.css">
+  <link rel="icon" type="image/x-icon" href="../Static/images/logo.png">
+  <title>Second Servings- View Post</title>
+</head>
+<body>
+
+<div id="menu"></div>
+
+<img src="../Static/images/logo.png" alt="logo" class="icon">
+<h2>Second</h2>
+<h2>Servings</h2>
+<body2>
+  <div class="container2sides">
+
+    <div class="right_viewPost">
+
+      <div class="row">
+        <div class="input-group_viewPost">
+          <img src="../Static/images/food.png" alt="logo" width="45" height="45">
+          <label>Amount available:</label>
+          <input type="text" id="amountAvailable" class="data_readonly" readonly>
+        </div>
+      </div>
+
+      <button id="button_updateAmount">Update amount left</button>
+
+      <div class="row">
+        <div class="input-group_viewPost">
+          <img src="../Static/images/date.png" alt="logo" width="50" height="60">
+          <label>Expiration Date:</label>
+          <input type="text" id="expiration_date" class="data_readonly" readonly>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-group_viewPost">
+          <img src="../Static/images/clock.png" alt="logo" width="45" height="40">
+          <label>Pickup Hours:</label>
+          <input type="text" id="pickup_hours-date" class="data_readonly" readonly>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-group_viewPost">
+          <img src="../Static/images/location.png" alt="logo" width="45" height="55">
+          <label>Address:</label>
+          <input type="text" id="address" class="data_readonly" readonly>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="input-group_viewPost">
+          <img src="../Static/images/phone.png" alt="logo" width="45" height="45">
+          <label>Phone Number:</label>
+          <input type="text" id="phone_number" class="data_readonly" readonly>
+        </div>
+      </div>
+     <div class="row">
+        <div class="input-group_viewPost">
+          <img src="../Static/images/description.png" alt="logo" width="45" height="55">
+          <label>Description:</label>
+          <textarea cols="15" rows="2" id="description" class="textarea-view" readonly></textarea>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="input-group_viewPost">
+          <img src="../Static/images/information.png" alt="logo" width="45" height="45">
+          <label>Allergies:</label>
+          <textarea cols="15" rows="2" id="allergies" class="textarea-view" readonly></textarea>
+        </div>
+      </div>
+
+      <div class="row">
+        <label for="amount" id="label_enterAmount">Enter the amount you want to pick-up:</label>
+        <input type="number" id="amount" value="1" min="1" class="textbox_short">
+      </div>
+      <button id="button_selectPickup">Select pick-up</button>
+    </div>
+
+
+    <div class="left">
+
+      <input type="text" id="title_view" class="data" readonly>
+
+      <img id="image" src="../Static/images/food2.jpg" alt="your image" width="400" height="400">
+      <div class="row">
+        <label for="kosher" id="label_Kosher">Kosher: </label>
+        <p></p>
+        <div id="kosher">
+          <label><input type="checkbox" name="kosher-dairy" readonly> Kosher-dairy</label>
+          <br><label><input type="checkbox" name="kosher-meat" readonly> Kosher-meat</label>
+          <br><label><input type="checkbox" name="not-kosher" readonly> Not-kosher</label>
+        </div>
+      </div>
+      <div class="row">
+        <label for="diet" id="label_category">Diet: </label>
+        <p></p>
+        <div id="diet">
+          <label><input type="checkbox" name="Vegetarian" readonly> Vegetarian</label>
+          <label><input type="checkbox" name="Vegan" readonly> Vegan</label>
+          <br> <label><input type="checkbox" name="gluten-free" readonly> Gluten-free</label>
+          <label><input type="checkbox" name="peanut-free" readonly> Peanut-free</label>
+          <br> <label><input type="checkbox" name="dairy-free" readonly> Dairy-free</label>
+          <label><input type="checkbox" name="sugar-free" readonly> Sugar-free</label>
+        </div>
+      </div>
+
+
+      <p></p>
+      <p></p>
+
+    </div>
+  </div>
+
+  <button id="button5">Back</button>
+  <script src="../Static/JS_ViewPost.js" type="module"></script>
+</body2>
+</body>
+<footer id="footer_viewPost">
+  Second Servings | Tel: +972-524366539 | Email: secondServings@gmail.com
+</footer>
+</html>

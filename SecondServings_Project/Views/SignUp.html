@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="../Static/SecondServings_CSS.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <link rel="icon" type="image/x-icon" href="../Static/images/logo.png">
+  <meta charset="UTF-8">
+  <title>Second Servings-Sign Up</title>
+</head>
+<body>
+<div id="menu"></div>
+<script>
+  fetch('MenuBar.html')
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById('menu').innerHTML = html;
+    });
+</script>
+<img src="../Static/images/logo.png" alt="logo" class="icon">
+<h2>Second Servings</h2>
+<h3>Sign Up</h3>
+<div class="container">
+
+  <p id="p_anonymusPhone">Your phone-number and address will remain confidential and will only be published when
+    sharing a post.</p>
+  <div class="row">
+    <label id="label3" for="PhoneNumber">Phone number:</label>
+    <input type="tel" id="PhoneNumber" class="textbox" required pattern="^05\d{8}$">
+  </div>
+
+  <p> *Phone numbers must start with "05" and be followed by 8 digits. </p>
+
+  <div class="row">
+    <label id="label_city" for="city">City:</label>
+    <select name="city" id="city">
+      <option value="">Pick your city</option>
+      <option value="Arad">Arad</option>
+      <option value="Ashdod">Ashdod</option>
+      <option value="Ashkelon">Ashkelon</option>
+      <option value="Bat Yam">Bat Yam</option>
+      <option value="Be'er Sheva">Be'er Sheva</option>
+      <option value="Bnei Brak">Bnei Brak</option>
+      <option value="Eilat">Eilat</option>
+      <option value="Haifa">Haifa</option>
+      <option value="Herzliya">Herzliya</option>
+      <option value="Holon">Holon</option>
+      <option value="Jerusalem">Jerusalem</option>
+      <option value="Kfar Saba">Kfar Saba</option>
+      <option value="Netanya">Netanya</option>
+      <option value="Petah Tikva">Petah Tikva</option>
+      <option value="Raanana">Raanana</option>
+      <option value="Ramat Gan">Ramat Gan</option>
+      <option value="Rishon LeZion">Rishon LeZion</option>
+      <option value="Tel Aviv">Tel Aviv</option>
+      <option value="Tiberias">Tiberias</option>
+      <option value="Zikhron Ya'akov">Zikhron Ya'akov</option>
+    </select>
+  </div>
+
+  <div class="row">
+    <label id="label4" for="Address">Address:</label>
+    <input type="text" id="Address" class="textbox">
+  </div>
+
+
+  <div class="row">
+    <label id="label1" for="UserName">User name:</label>
+    <input type="text" id="UserName" class="textbox">
+  </div>
+
+  <div class="row">
+    <label id="label2" for="Password">Password:</label>
+      <input type="password" id="Password" class="textbox">
+      <i class="fa fa-eye toggle-password"></i>
+  </div>
+
+
+  <p id="passwardLimitations">*Password must be 8-12 characters long and contain at least one digit,<br> one lowercase
+    letter, and one uppercase letter.</p>
+
+  <div id="checkbox">
+    <label><input type="checkbox" name="restaurant">I'm a restaurant owner</label>
+  </div>
+  <p></p>
+  <div class="row">
+    <label for="checkboxes" id="label_Kosher">Kosher preferences:</label>
+    <div id="checkboxes">
+      <label><input type="checkbox" name="kosher-dairy"> Kosher-dairy</label>
+      <label><input type="checkbox" name="kosher-meat"> Kosher-meat</label>
+      <label><input type="checkbox" name="not-kosher"> Not-kosher</label>
+    </div>
+  </div>
+  <label id="label_category" for="preferences">Diet preferences:</label>
+  <div id="preferences">
+    <label><input type="checkbox" name="Vegetarian"> Vegetarian</label>
+    <label><input type="checkbox" name="Vegan"> Vegan</label>
+    <label><input type="checkbox" name="Gluten-free"> Gluten-free</label>
+    <label><input type="checkbox" name="Peanut-free"> Peanut-free</label>
+    <label><input type="checkbox" name="Dairy-free"> Dairy-free</label>
+    <label><input type="checkbox" name="Sugar-free"> Sugar-free</label>
+  </div>
+  <p></p>
+  <button id="button_signUp">Sign up!</button>
+</div>
+<footer>
+  Second Servings | Tel: +972-524366539 | Email: secondServings@gmail.com
+</footer>
+<button id="button5">Back</button>
+<script src="../Static/JS_SignUp.js" type="module"></script>
+
+</body>
+
+</html>

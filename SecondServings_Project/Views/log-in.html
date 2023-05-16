@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="../Static/SecondServings_CSS.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="icon" type="image/x-icon" href="../Static/images/logo.png">
+  <meta charset="UTF-8">
+  <title>Second Servings-Log In</title>
+</head>
+<body>
+
+<div id="menu"></div>
+<script>
+  fetch('MenuBar.html')
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById('menu').innerHTML = html;
+    });
+</script>
+
+<img src="../Static/images/logo.png" alt="logo" class="icon">
+<h2>Second Servings</h2>
+<h3>Log In</h3>
+
+
+<div class="container">
+
+  <div class="row">
+    <label id="label1" for="UserName">User name:</label>
+    <input type="text" id="UserName" class="textbox">
+  </div>
+
+  <div class="row">
+    <label id="label2" for="Password">Password:</label>
+    <input type="password" id="Password" class="textbox">
+    <i class="fa fa-eye toggle-password"></i>
+  </div>
+  <button id="button_login">Log-In!</button>
+  <p></p>
+  <div class="row">
+    <label id="label11">New User? </label>
+    <button id="button8">Sign-Up!</button>
+  </div>
+
+</div>
+
+<button id="button5">Back</button>
+<script src="../Static/JS_LogIn.js" type="module"></script>
+
+</body>
+
+
+</html>
