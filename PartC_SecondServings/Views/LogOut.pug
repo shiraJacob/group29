@@ -1,0 +1,21 @@
+doctype html
+head
+  link(rel='stylesheet' href='../Static/SecondServings_CSS.css')
+  link(rel='icon' type='image/x-icon' href='../Static/images/logo.png')
+  meta(charset='UTF-8')
+  title Second Servings - Log Out
+
+include MenuBar_User.pug
+img.icon(src='../Static/images/logo.png' alt='logo')
+h2 Second Servings
+form(action="/Log_out", method="post")
+  .container_NoBlur
+    .image-container
+      img(src='../Static/images/logo.png' alt='logo' width='200')
+    .row
+      label#lable_pleaseLogin1 Are you sure you want to log out? 
+    .row_homePage
+      button#button_signUp2(type='submit') Yes
+      button#button_login2(type='button', onclick="window.location.href =' /HomePage_User';") No
+    p
+script(src='../Static/JS.js')

@@ -1,0 +1,61 @@
+doctype html
+
+head
+  meta(charset='UTF-8')
+  title Second Servings- Edit profile
+  link(rel='stylesheet' href='../Static/SecondServings_CSS.css')
+  link(rel='icon' type='image/x-icon' href='../Static/images/logo.png')
+body
+  include MenuBar_User.pug
+  img.icon(src='../Static/images/logo.png' alt='logo')
+  h2 Second Servings
+  h3 Edit profile
+  p #{v1}
+  .container
+    form(action="/Edit_profile", method="post")
+      input#username.data(type='text' readonly='' value=user.UserName)
+      p#p_anonymusPhone
+        | *Your phone-number and address will remain confidential and will only be published when
+        | sharing a post.
+      .row
+        label Phone number:
+        input.textbox(type='tel' ,name='PhoneNumber_edit' ,required='' ,value=user.PhoneNumber_user, class=(invalidFields && invalidFields.includes('PhoneNumber_edit') ? 'invalid' : ''))
+      p
+          | *Phone numbers must start with "05" and be followed by 8 digits.
+      .row
+          label City:
+          select.textbox_select(name='city_edit', class=(invalidFields && invalidFields.includes('city_edit') ? 'invalid' : ''))
+            option(value=user.City) #{user.City}
+            each city in cities
+              option(value=city.City) #{city.City}
+      .row
+        label Address:
+        input.textbox(type='text' ,name="Address_edit" ,value=user.Address, class=(invalidFields && invalidFields.includes('Address_edit') ? 'invalid' : ''))
+      .row
+        label Password:
+        input.textbox(type='password', name='Password_edit', class=(invalidFields && invalidFields.includes('Password_edit') ? 'invalid' : ''))
+        i.fa.fa-eye.toggle-password
+
+      p
+        | *Password must be 8-12 characters long and contain at least one digit, one lowercase letter, and one uppercase letter.
+
+      #checkbox
+        label
+          input(type='checkbox', name='restaurant_edit', checked=user.RestaurantOwner ? true : null)
+          | I'm a restaurant owner
+      p
+      label#label_category(for='preferences') Diet preferences:
+      #preferences
+        each diet in allDiet
+          - let is_checked = null;
+          each my_Diet in myDiet
+            - if (diet.Diet === my_Diet.Diet)
+              - is_checked = 'checked';
+          label
+            input(type='checkbox', name='dietPreference', value=diet.Diet, checked=is_checked)
+            | #{diet.Diet}
+
+
+      p
+      button(type='submit') Save
+script(src='../Static/JS.js' type='module')

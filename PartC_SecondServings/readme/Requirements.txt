@@ -1,0 +1,19 @@
+Requirements
+1.  Modules: express, mysql2, path, pug, body-parser, cookie-parser, csv2json, fs, multer
+2.  
+a. Create path: /CreateTable
+b. Insert path: /InsertTable
+c. Delete path: /DropTable
+3. Table creation syntax:
+CREATE TABLE IF NOT EXISTS `Cities` (City VARCHAR(255) primary key not null)
+CREATE TABLE IF NOT EXISTS `Hours` (Hour VARCHAR(4) primary key not null)
+CREATE TABLE IF NOT EXISTS `Diets` (Diet VARCHAR(255) primary key not null )
+CREATE TABLE IF NOT EXISTS `Koshers` (Kosher VARCHAR(255) primary key not null)
+CREATE TABLE IF NOT EXISTS `Users` (UserName VARCHAR(255) primary key not null,Password VARCHAR(255) not null,PhoneNumber_user VARCHAR(10) not null,City VARCHAR(255) not null references Cities(City) ,Address VARCHAR(255) not null, RestaurantOwner INT not null)
+CREATE TABLE IF NOT EXISTS `Posts` (Post_num INT AUTO_INCREMENT PRIMARY KEY, User_share VARCHAR(255) not null references Users(UserName) , Post_date DATE not null, URL_photo  VARCHAR(3000) not null, Title VARCHAR(500) not null, PhoneNumber_post VARCHAR(10) not null, City VARCHAR(255) not null references Cities(City), Address VARCHAR(500) not null, Description VARCHAR(800) , Quantity INT not null, Expiry DATE not null, Hours_from VARCHAR(4) not null references Hours(hour), Hours_to VARCHAR(4) not null references Hours(hour), Amount_available INT not null)
+CREATE TABLE IF NOT EXISTS `Pickups` (Post_num INT not null references Posts(Post_num), User_take VARCHAR(255) not null references Users(UserName),Pickup_dateTime DATETIME not null, primary key (Post_num, User_take, Pickup_dateTime), Amount_taken INT not null)
+CREATE TABLE IF NOT EXISTS `Update_amount_left` (Post_num INT not null references Posts(Post_num), User_update VARCHAR(255) not null references Users(UserName),Update_dateTime DATETIME not null, primary key (Post_num, User_update, Update_dateTime), Amount_update INT not null)
+CREATE TABLE IF NOT EXISTS `Posts_Kosher` (Post_num INT not null references Posts(Post_num), Kosher VARCHAR(255) not null references Koshers(Kosher), primary key (Post_num, Kosher))
+CREATE TABLE IF NOT EXISTS `Users_Diet` (UserName VARCHAR(255) not null references Users(UserName), Diet VARCHAR(255) not null references Diets(Diet), primary key (UserName, Diet))
+CREATE TABLE IF NOT EXISTS `Posts_Diet` (Post_num INT not null references Posts(Post_num), Diet VARCHAR(255) not null references Diets(Diet), primary key (Post_num, Diet))
+

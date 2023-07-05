@@ -1,0 +1,21 @@
+Post_num,User_share,Post_date,URL_photo,Title,PhoneNumber_post,City,Address,Description,Quantity,Expiry,Hours_from,Hours_to,Amount_available
+1,JohnSmith,2023-06-24,Static/images/food1.jpg,Pasta,0523456789,Arad,123 Main St,Delicious homemade pasta dish,10,2023-07-04,8am,1pm,5
+2,EmilyJohnson,2023-06-22,Static/images/food2.jpg,Pizza,0512345678,Ashdod,456 Elm St,Freshly baked pizza specials,20,2023-07-05,9am,12pm,10
+3,MichaelBrown,2023-06-20,Static/images/food3.jpg,Burger,0598765432,Ashkelon,789 Oak Ave,Gourmet burgers with special sauce,50,2023-07-06,9am,11am,15
+4,SophiaDavis,2023-06-18,Static/images/food4.jpg,Salad,0555555555,Bat Yam,321 Pine Rd,Fresh and healthy salad options,15,2023-07-07,8am,12pm,8
+5,DanielWilson,2023-06-16,Static/images/food5.jpg,Sushi,0509876543,Be'er Sheva,654 Cedar Ln,Assorted sushi rolls and sashimi,2,2023-07-08,10am,2pm,2
+6,OliviaAnderson,2023-06-14,Static/images/food6.jpg,Pancakes,0578945612,Bnei Brak,987 Maple Ct,Fluffy pancakes with various toppings,30,2023-07-09,9am,11am,20
+7,JamesMartinez,2023-06-12,Static/images/food7.jpg,Smoothie,0533333333,Eilat,741 Birch Ave,Fresh and nutritious smoothies,5,2023-07-10,10am,1pm,3
+8,EmmaGonzalez,2023-06-10,Static/images/food8.jpg,Ice Cream,0543210987,Haifa,852 Oak St,Assorted flavors of ice cream,12,2023-07-11,9am,2pm,10
+9,EthanWilson,2023-06-08,Static/images/food9.jpg,BBQ,0587654321,Herzliya,369 Pine Ave,Grilled meats and vegetables,25,2023-07-12,9am,1pm,20
+10,AvaAnderson,2023-06-06,Static/images/food1.jpg,Curry,0522222222,Jerusalem,951 Cedar St,Authentic Indian curry,8,2023-07-13,10am,1pm,5
+11,NoahLopez,2023-06-04,Static/images/food2.jpg,Tacos,0500000000,Tel Aviv,753 Elm St,Delicious tacos with various fillings,15,2023-07-14,8am,12pm,12
+12,MiaGarcia,2023-06-02,Static/images/food3.jpg,Burrito,0567890123,Netanya,258 Oak Ave,Flavorful Mexican burritos,10,2023-07-15,9am,11am,8
+13,LiamHernandez,2023-05-31,Static/images/food4.jpg,Sushi,0577777777,Haifa,753 Pine Rd,Assorted sushi rolls and sashimi,4,2023-07-16,8am,1pm,3
+14,IsabellaLopez,2023-05-29,Static/images/food5.jpg,Pizza,0544444444,Tel Aviv,111 Cedar Ln,Classic pizza with various toppings,6,2023-07-17,10am,1pm,2
+15,JohnSmith,2023-05-27,Static/images/food6.jpg,Sandwich,0523456789,Ramat Gan,222 Elm St,Freshly made sandwiches,3,2023-07-18,9am,12pm,2
+16,JamesMartinez,2023-05-25,Static/images/food7.jpg,Noodles,0533333333,Be'er Sheva,333 Oak Ave,Savory noodle dish,7,2023-07-19,10am,12pm,5
+17,DanielWilson,2023-05-23,Static/images/food8.jpg,BBQ Ribs,0509876543,Herzliya,444 Pine Rd,Tender and juicy BBQ ribs,4,2023-07-20,9am,12pm,3
+18,OliviaAnderson,2023-05-21,Static/images/food9.jpg,Pancakes,0578945612,Eilat,555 Cedar Ln,Fluffy pancakes with various toppings,10,2023-07-21,10am,2pm,8
+19,MiaGarcia,2023-05-19,Static/images/food5.jpg,Sushi,0567890123,Tel Aviv,666 Maple Ct,Assorted sushi rolls and sashimi,6,2023-07-22,9am,1pm,5
+20,SophiaDavis,2023-05-17,Static/images/food6.jpg,Salad,0555555555,Haifa,777 Birch Ave,Fresh and healthy salad options,4,2023-07-23,8am,2pm,3

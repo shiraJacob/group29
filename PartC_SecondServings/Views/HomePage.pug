@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    link(rel='stylesheet' href='../Static/SecondServings_CSS.css')
+    link(rel='icon' type='image/x-icon' href='../Static/images/logo.png')
+    meta(charset='UTF-8')
+    title Second Servings
+  body
+    include menuBar.pug
+
+    button#button_signUp1(type='button', onclick="window.location.href =' /SignUp';")
+      img(src='../Static/images/new_user.png' width='25' height='25')
+      |   Sign Up
+    button#button_login1(type='button', onclick="window.location.href ='/log-in';")
+      img(src='../Static/images/userIcon.png' width='26' height='26')
+      |   Log In
+    p
+    h2 Second Servings
+    .container_NoBlur
+      input#greeting(type='text' readonly='')
+    .container_aboutUs
+      p#p_aboutUs
+        | Welcome to Second Servings- platform for sharing food leftovers! 
+        br
+        |  Our goal is to reduce waste while helping those in need access to
+        |  good quality food. Whether you&apos;re an individual or a restaurant owner, join us in creating a sustainable future by
+        |  contributing to the community.
+   
+  
+    script(src='../Static/JS.js')

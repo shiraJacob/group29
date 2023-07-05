@@ -1,0 +1,39 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  title Second Servings- Your Pickups
+  link(rel='stylesheet' href='../Static/SecondServings_CSS.css')
+  link(rel='icon' type='image/x-icon' href='../Static/images/logo.png')
+body
+  include MenuBar_User.pug
+
+  img.icon(src='../Static/images/logo.png' alt='logo')
+  h2 Second Servings
+  h3 Food You Picked-Up
+
+  .container_grid
+    #username.input-group
+      input#username.profile_data(type='text'  value= user  readonly)
+    p 
+    #pickupsContainer.container_scrollbar
+      each pickup in pickups
+        .container2sides_watch
+          .left_viewPost
+            a(href=`/viewPost?post=${pickup.postNum}`)
+              img(src=pickup.photo width='150' height='140')
+          .right_watch
+            .row_profileData
+              .input-group
+                img(src='../Static/images/food.png' alt='logo' width='40' height='40')
+                input#expiration_date.data_readonly(type='text' value=pickup.title readonly)
+            .row_profileData
+              .input-group
+                img(src='../Static/images/date.png' alt='logo' width='40' height='40')
+                input#expiration_date.data_readonly(type='text' value=pickup.pickupDate readonly)
+            .row_profileData
+              .input-group
+                img(src='../Static/images/userIcon.png' alt='logo' width='40' height='40')
+                input#expiration_date.data_readonly(type='text' value=pickup.user readonly)
+
+  p
+  script(src='../Static/JS.js' type='module')

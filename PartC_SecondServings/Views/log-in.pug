@@ -1,0 +1,28 @@
+doctype html
+head
+  link(rel='stylesheet' href='../Static/SecondServings_CSS.css')
+  link(rel='icon' type='image/x-icon' href='../Static/images/logo.png')
+  meta(charset='UTF-8')
+  title Second Servings-Log In
+
+include menuBar.pug
+img.icon(src='../Static/images/logo.png' alt='logo')
+h2 Second Servings
+h3 Log In
+form(action="/Login", method="post")
+  p #{v1}
+  .container
+    .row
+      label(for='userName_login') User name:
+      input.textbox(id='userName_login', name='userName_login' , type='text')
+    .row
+      label(for='password_login') Password:
+      input.textbox(id='password_login', name='password_login' , type='password')
+      i.fa.fa-eye.toggle-password
+    
+    button#button_login(type='submit') Log-In!
+    p
+    .row
+      label#label11 New User? 
+      button(type='button' ,onclick="window.location.href =' /SignUp';") Sign-Up!
+script(src='../Static/JS.js' type='module')

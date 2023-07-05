@@ -1,0 +1,80 @@
+doctype html
+html
+  head
+    link(rel='stylesheet' href='../Static/SecondServings_CSS.css')
+    link(rel='icon' type='image/x-icon' href='../Static/images/logo.png')
+    title Second Servings- View Post
+  body
+    include MenuBar_User.pug
+    img.icon(src='../Static/images/logo.png' alt='logo')
+    h2 Second Servings
+    p#errorP #{v1}
+    container_view
+      .container2sides
+        .right_viewPost
+          form(action="/selectPickup", method='post')
+            .row
+              .input-group_viewPost
+                img(src='../Static/images/date.png' alt='logo' width='50' height='60')
+                label Expiration Date:
+                input#expiration_date.data_readonly(type='text' readonly='', value= expiry)
+            .row
+              .input-group_viewPost
+                img(src='../Static/images/clock.png' alt='logo' width='45' height='40')
+                label Pickup Hours:
+                input#pickup_hours-date.data_readonly(type='text' readonly='', value= hours)
+            .row
+              .input-group_viewPost
+                img(src='../Static/images/location.png' alt='logo' width='45' height='55')
+                label Address:
+                input#address.data_readonly(type='text' readonly='', value=address)
+            .row
+              .input-group_viewPost
+                img(src='../Static/images/phone.png' alt='logo' width='45' height='45')
+                label Phone Number:
+                input#phone_number.data_readonly(type='text' readonly='', value=phone)
+            .row
+              .input-group_viewPost
+                img(src='../Static/images/description.png' alt='logo' width='45' height='55')
+                label Description:
+                input#address.data_readonly(type='text' readonly='',value=description)
+            .row
+              label#label_category(for='kosher') Kosher: 
+              p
+              #diet
+              each kosher in koshers
+                label
+                  input(type='checkbox', name='kosher', checked= true, disabled=true)
+                  | #{kosher.Kosher}
+            .row
+              label#label_category(for='diet') Diet: 
+              p
+              #diet
+                each diet in diets
+                  label
+                    input(type='checkbox', name='diet', checked= true, disabled=true)
+                    | #{diet.Diet}
+            input(type='hidden', name='amount', value=amount)
+            input(type='hidden', name='postNum', value=postNum)
+            .row
+              label#label_enterAmount(for='amountTaken') Enter the amount you want to pick-up:
+              input#amount.textbox_short(type='number', name="amountTaken" value='1' min='1')
+            button#button_selectPickup(type="submit") Select pick-up
+        .left
+          form(action="/UpdateAmountPost", method='post')
+            input#title_view.data(type='text' readonly='' name= 'title_post', value=title)
+            img#image(src=picture alt=title width='400' height='400')
+            .input-group_viewPost
+                img(src='../Static/images/food.png' alt='logo' width='45' height='45')
+                label Amount available:
+                input#amountAvailable.data_readonly(type='text' readonly='', name = 'amount' value=amount)
+                input(type='hidden', name='postNum', value=postNum)
+            button#button_updateAmount(type="submit") Update amount
+            
+            
+          p
+          p
+
+
+
+

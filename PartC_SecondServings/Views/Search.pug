@@ -1,0 +1,52 @@
+doctype html
+head
+  link(rel='stylesheet' href='../Static/SecondServings_CSS.css')
+  link(rel='icon' type='image/x-icon' href='../Static/images/logo.png')
+  meta(charset='UTF-8')
+  script(src='../Static/JS.js')
+  title Second Servings - Search Pickup
+
+body
+  include MenuBar_User.pug
+  img.icon(src='../Static/images/logo.png' alt='logo')  
+  h2 Second Servings
+  h3 Find your pick-up
+  .container_grid
+    form#form_search(action="/filterPosts", method="post")
+      .row
+        label City:
+        select.textbox_select(name='city_search' value=filterValues.city_loc)
+          option(value='' selected=!filterValues.city) Pick your city
+          each city in cities
+            option(value=city.City selected=(filterValues.city_select === city.City)) #{city.City}
+        
+        input#city.textbox(type='text' name='city' value=filterValues.city_loc)
+        button#button_location(type="button" onclick='getLocation()') Use location
+      
+      .row
+        .checkbox_container
+          label#label_category Diet preferences:
+          #preferences_search
+            each diet in dietPreferences
+              label
+                input(type='checkbox', name='dietPreference_search', value=diet.Diet, checked=filterValues.dietPreferences.includes(diet.Diet))
+                | #{diet.Diet}
+      
+      .row
+        label#label_Kosher(for='kosher_search') Kosher:
+        select.textbox_select(name='kosher_search')
+          option(value='' selected=!filterValues.kosher) Pick kosher
+          each kosher in koshers
+            option(value=kosher.Kosher selected=(filterValues.kosher === kosher.Kosher)) #{kosher.Kosher}
+        
+        button#button_clearFilter(type='button', onclick="window.location.href =' /Search';") Clear Filter
+          
+      .row
+        button#button_filter(type='submit') Filter Search
+
+  .container_posts_row
+    .container_posts
+      each post in posts
+        .row_images
+          a(href=`/viewPost?post=${post.Post_num}`) 
+            img(src=post.URL_photo, alt=post.Title)

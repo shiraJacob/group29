@@ -1,0 +1,102 @@
+doctype html
+head
+  title Second Servings- Post Your Food
+  link(rel='stylesheet' href='../Static/SecondServings_CSS.css')
+  link(rel='icon' type='image/x-icon' href='../Static/images/logo.png')
+  script(src='../Static/JS.js' type='module')
+body
+  include MenuBar_User.pug
+  img.icon(src='../Static/images/logo.png' alt='logo')
+  h2 Second Servings
+  h3 Post Your Food!
+
+  p #{v1}
+
+  
+  .container
+    form(action="/Post_food", method="post", enctype="multipart/form-data")
+      .addImage
+        span.file-span(onclick="document.getElementById('picture_newPost').click();", style="display: block;", class=(invalidFields && invalidFields.includes('picture_newPost') ? 'invalid' : ''))
+          input(type='file', id='picture_newPost', name='picture_newPost', style='display: none;', accept='image/*')
+        .image-container
+          img#selectedImage(src='' alt='Selected Image' width='200' height='200' style='display: none;')
+
+
+      //show the picture after choosing
+      script.
+        const pictureInput = document.getElementById('picture_newPost');
+        const fileSpan = document.querySelector('.file-span');
+        const selectedImage = document.getElementById('selectedImage');
+        const imageContainer = document.querySelector('.image-container');
+
+        pictureInput.addEventListener('change', function(event) {
+          const file = event.target.files[0];
+          const reader = new FileReader();
+
+          reader.onload = function(e) {
+            selectedImage.src = e.target.result;
+            selectedImage.style.display = 'block';
+            fileSpan.style.display = 'none';
+            imageContainer.style.display = 'flex';
+          };
+
+          reader.readAsDataURL(file);
+        });
+
+      p
+      .row
+        label Title:
+        input.textbox(type='text',  name="title_newPost", class=(invalidFields && invalidFields.includes('title_newPost') ? 'invalid' : ''))
+      .row
+        label Phone number:
+        input.textbox(type='tel', name="phone_newPost", value=user.PhoneNumber_user, class=(invalidFields && invalidFields.includes('phone_newPost') ? 'invalid' : ''))
+
+      .row
+        label City:
+        select.textbox_select(name='city_newPost')
+          option(value=user.City) #{user.City}
+          each city in cities
+            option(value=city.City) #{city.City}
+
+      .row
+        label Pickup address:
+        input.textbox(type='text', name="adrress_newPost", value= user.Address, class=(invalidFields && invalidFields.includes('adrress_newPost') ? 'invalid' : ''))
+      .row
+        label Description:
+        input.textbox(type='text',  name="description_newPost" , class=(invalidFields && invalidFields.includes('description_newPost') ? 'invalid' : ''))
+      .row
+        label Quantity:
+        input.textbox_short(type='number',  name="quantity_newPost", value='1', min='1')
+      .row
+        label Expiry date:
+        input.textbox(type='date',  name='expiry_date_newPost', value='' , class=(invalidFields && invalidFields.includes('expiry_date_newPost') ? 'invalid' : ''))
+      .row
+        label#label_hour Pickup hours:
+      .row
+        label#label_hour From:
+        select.textbox(name='pickup_hours_from_newPost')
+          option(value='8') 8am
+          each hour in hours
+            option(value=hour.Hour) #{hour.Hour}
+
+        label#label_hour  To:
+        select.textbox(name='pickup_hours_to_newPost')
+          option(value='22') 10pm
+          each hour in hours
+            option(value=hour.Hour) #{hour.Hour}
+      .row
+        label#label_Kosher(class=(invalidFields && invalidFields.includes('kosher') ? 'invalid_lable' : '')) Kosher preferences:
+      #checkboxes(name='kosher_newPost')
+        each kosher in koshers
+          label
+            input(type='checkbox', name='kosher', value=kosher.Kosher)
+            | #{kosher.Kosher}
+      .row
+        label#label_category(for='preferences', class=(invalidFields && invalidFields.includes('dietPreference') ? 'invalid_lable' : '')) Diet preferences:
+      #preferences
+        each diet in dietPreferences
+          label
+            input(type='checkbox', name='dietPreference', value=diet.Diet)
+            | #{diet.Diet}
+      button#button_share1(type='submit') Share My Food! 
+      

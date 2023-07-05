@@ -1,0 +1,24 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  title Second Servings- Update Amount
+  link(rel='stylesheet' href='../Static/SecondServings_CSS.css')
+  link(rel='icon' type='image/x-icon' href='../Static/images/logo.png')
+body
+include menuBar_User.pug
+img.icon(src='../Static/images/logo.png' alt='logo')
+h2 Second Servings
+form(action="/update_amount", method="post")
+  .container
+    input(type='hidden', name='postNum', value=postNum)
+    //input#username.data(type='text' readonly='')
+    .row
+      .input-group_viewPost
+        img(src='../Static/images/food.png' alt='logo' width='45' height='55')
+        input.data_readonly(type='text' name='title' readonly='' value=title)
+    img#image(src=picture height='250em' width='250em')
+    label Enter amount left:
+    input.textbox_short(type='number' name='amount' value=amount min='1')
+    button#button_update(type='submit') Update
+
+  script(src='../Static/JS.js' type='module')

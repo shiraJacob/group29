@@ -1,0 +1,56 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    title Second Servings - Your Profile
+    link(rel='stylesheet', href='../Static/SecondServings_CSS.css')
+    link(rel='icon', type='image/x-icon', href='../Static/images/logo.png')
+    img.icon(src='../Static/images/logo.png', alt='logo')
+
+  body
+    include MenuBar_User.pug
+    h2 Second Servings
+    h3 Welcome
+    .container_profile
+      input#username.profile_data(type='text', readonly='', value=UserName)
+      p
+      .row_profile
+        .input-group
+          img(src='../Static/images/Send.png', alt='logo', width='80', height='50')
+          input#foodSahring_number.profile_data(type='number', readonly='', value=Posts_num)
+        .input-group
+          img(src='../Static/images/food.png', alt='logo', width='50', height='50')
+          input#pickups_number.profile_data(type='number', readonly='', value=Pickups_num)
+      .row_profile
+        label#profile_foodSharings Food Sharing
+        label#profile_myPickups Delicious pick-ups
+      .row_profile
+        button#button_viewSharing(type='button' ,onclick="window.location.href =' /FoodYouShared';") View my sharings
+        button#button_viewPickups(type='button' ,onclick="window.location.href =' /YourPickups';") View my pick-ups
+      p
+      .row_profileData
+        .input-group
+          img(src='../Static/images/group.png', alt='logo', width='50', height='50')
+          input#enjoyedYourFood_number.profile_data(type='number', readonly='', value=People)
+      .row
+        label#profile_enjoyedYourFood People enjoyed Your Food
+      p
+      .container2sides_profile
+        p
+        .row_profileData
+          .input-group
+            img(src='../Static/images/location.png', alt='logo', width='50', height='60')
+            input#profile_location.profile_data(type='text', readonly='', value=City)
+        p
+        .left_viewPost
+          label#label_category(for='preferences') Diet preferences:
+          #preferences
+            each diet in dietPreferences
+              label
+                input(type='checkbox', name='dietPreference', checked= true, disabled=true)
+                | #{diet.Diet}
+        .right_profile
+          button(type='button', onclick="window.location.href='/EditProfile';") Edit Profile
+      p
+
+    script(src='../Static/JS.js', type='module')

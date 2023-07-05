@@ -1,0 +1,22 @@
+doctype html
+head
+  link(rel='stylesheet' href='../Static/SecondServings_CSS.css')
+  link(rel='icon' type='image/x-icon' href='../Static/images/logo.png')
+  meta(charset='UTF-8')
+  title Second Servings- Please log-in
+body
+include menuBar.pug
+img.icon(src='../Static/images/logo.png' alt='logo')
+h2 Second Servings
+.container_NoBlur
+  .image-container
+    img(src='../Static/images/logo.png' alt='logo' width='200')
+  .row
+    label#lable_pleaseLogin1 Please log-in/sign-up
+  .row
+    label#lable_pleaseLogin2 to continue
+  .row_homePage
+    button#button_signUp2(type='button', onclick="window.location.href =' /SignUp';") Sign-up
+    button#button_login2(type="button", onclick="window.location.href ='/log-in';") Log-in
+  p
+script(src='../Static/JS.js')

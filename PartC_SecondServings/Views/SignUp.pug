@@ -1,0 +1,72 @@
+doctype html
+html
+  head
+    link(rel='stylesheet' href='../Static/SecondServings_CSS.css')
+    link(rel='icon' type='image/x-icon' href='../Static/images/logo.png')
+    meta(charset='UTF-8')
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Second Servings - Sign Up
+
+  body
+    include menuBar.pug
+    img.icon(src='../Static/images/logo.png', alt='logo')
+
+    h2 Second Servings
+    h3 Sign Up
+
+    p #{v1}
+    .container
+
+      form(action="/Sign_up", method="post", id="signup-form") 
+        p#p_anonymousPhone
+          | Your phone number and address will remain confidential and will only be published when
+          | sharing a post.   
+ 
+        .row
+          label(for='PhoneNumber_signup') Phone number:
+          input.textbox(type='tel', name='PhoneNumber_signup' class=(invalidFields && invalidFields.includes('PhoneNumber_signup') ? 'invalid' : ''))
+
+        p
+          | *Phone numbers must start with "05" and be followed by 8 digits.
+
+        .row
+          label City:
+          select.textbox_select(name='city_signup' class=(invalidFields && invalidFields.includes('City_signup') ? 'invalid' : ''))
+            option(value='') Pick your city
+            each city in cities
+              option(value=city.City) #{city.City}
+
+        .row
+          label(for='Address_signup') Address:
+          input.textbox(type='text', name='Address_signup', class=(invalidFields && invalidFields.includes('Address_signup') ? 'invalid' : ''))
+
+        .row
+          label(for='UserName_signup') User name:
+          input.textbox(type='text', name='UserName_signup' class=(invalidFields && invalidFields.includes('UserName_signup') ? 'invalid' : ''))
+
+        .row
+          label(for='Password_signup') Password:
+          input.textbox(type='password', name='Password_signup' class=(invalidFields && invalidFields.includes('Password_signup') ? 'invalid' : ''))
+          i.fa.fa-eye.toggle-password
+
+        p
+          | *Password must be 8-12 characters long and contain at least one digit, one lowercase letter, and one uppercase letter.
+
+        #checkbox
+          label
+            input(type='checkbox', name='restaurant_signup')
+            | I'm a restaurant owner
+        p
+
+        label#label_category(for='preferences') Diet preferences:
+        #preferences
+          each diet in dietPreferences
+            label
+              input(type='checkbox', name='dietPreference', value=diet.Diet)
+              | #{diet.Diet}
+
+        p
+          button#button_signUp(type='submit') Sign up!
+
+  script(src='../Static/JS.js', type='module')

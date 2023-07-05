@@ -1,0 +1,22 @@
+doctype html
+head
+  link(rel='stylesheet' href='../Static/SecondServings_CSS.css')
+  meta(charset='UTF-8')
+  title Second Servings- Approved Pickup
+  link(rel='icon' type='image/x-icon' href='../Static/images/logo.png')
+include MenuBar_User.pug
+img.icon(src='../Static/images/logo.png' alt='logo')
+h2 Second Servings
+.container_NoBlur
+  .image-container
+    img(src='../Static/images/logo.png' alt='logo' width='200')
+  .row
+    label#label12 Your food is ready for pickup!
+  .row
+    label#label13 Please remember to update the
+  .row
+    label#label14 amount left at the pickup point.
+ 
+
+  button#button_OK(type='button', onclick="window.location.href ='/HomePage_User';") OK
+script(src='../Static/JS.js')
